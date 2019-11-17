@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        table{
+            font-size: 14px;
+        }
+        .cen{
+            text-align: center;
+        }
+
+        #img2{
+            width: 80px;height: 80px;margin:10px
+        }
+        #td1{
+            border-bottom: none;
+        }
+        #td2{
+            border-top: none;border-bottom: none;
+        }
+        #td3{
+            border-top: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<p style="text-align: center"><span style="font-size: 25px;font-weight: 500;">中国工商银行</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;margin-left: 30px">网上银行电子回单（补打）</span></p>
+<hr style="width: 50%;alignment: center;font-weight: 600">
+<p style="text-align: center">
+    <span>电子回单号码：{{ elec_num }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>打印日期：{{ print_date }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>第2次打印</span>
+</p>
+
+<div style="margin:0 auto;border:1px solid black;padding: 1px;width: 700px">
+    <table border="1" cellspacing="0" cellpadding="0" style="width: 700px; margin:0 auto;border-collapse: collapse;">
+        <tr>
+            <td rowspan="3" align="center">付款人</td>
+            <td align="center">户名</td>
+            <td>{{ pay_people }}</td>
+            <td rowspan="3" align="center">收款人</td>
+            <td align="center">户名</td>
+            <td>{{ receive_people }}</td>
+        </tr>
+        <tr>
+            <td align="center">账号</td>
+            <td>{{ pay_account }}</td>
+            <td align="center">账号</td>
+            <td>{{ receive_account }}</td>
+        </tr>
+        <tr>
+            <td align="center">开户银行</td>
+            <td>中国工商银行</td>
+            <td align="center">开户银行</td>
+            <td>中国工商银行</td>
+        </tr>
+    </table>
+    <table border="1" cellspacing="0" cellpadding="0" style="width: 700px; margin:0 auto;border-collapse: collapse;">
+         <tr>
+        <td  class="cen" colspan="2">金 额</td>
+        <td colspan="2">￥{{ exchange_maney }}元</td>
+        <td  class="cen" colspan="2">金 额（大写）</td>
+        <td colspan="2">人民币 {{ big_money }}</td>
+    </tr>
+    <tr>
+        <td  class="cen" colspan="2">摘 要</td>
+        <td colspan="2">对公收费明细入账</td>
+        <td  class="cen" colspan="2">业务（产品）种类</td>
+        <td colspan="2">对公收费</td>
+    </tr>
+    <tr>
+        <td  class="cen" colspan="2">用 途</td>
+        <td colspan="6" ></td>
+    </tr>
+    <tr>
+        <td  class="cen" colspan="2">交易流水号</td>
+        <td colspan="2">{{ flow_num }}</td>
+        <td  class="cen" colspan="2">时间戳</td>
+        <td colspan="2">{{ date }}</td>
+    </tr>
+    <tr>
+        <td rowspan="2" colspan="2" align="center"><img src="static/img/huidan_seal.png" style="width: 100px;height: 100px" alt=""></td>
+        <td colspan="5">
+            <div style="float: left">
+                备注：<br>
+                产品名称：回单管理 费用名称：自助打印回单 应收金额：{{ exchange_maney }} <br>
+                实收金额：{{ exchange_maney }} 收款渠道：批量 业务发生日期：2019-5-11 <br>
+                业务发生账号：{{ pay_account }}
+            </div>
+        </td>
+        <td style="border-left-style: none">
+            <img id="img2" src="static/img/huidan_code.png" alt="">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td colspan="6" style="vertical-align:top">验证码：{{ er_code }}</td>
+
+    </tr>
+    <tr>
+        <td  class="cen" colspan="2">记账网点</td>
+        <td>{{ net_node }}</td>
+        <td class="cen">记账柜员</td>
+        <td>{{ account_make }}</td>
+        <td class="cen">记账日期</td>
+        <td  colspan="2">{{ date }}</td>
+    </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

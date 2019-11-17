@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onebyone_pay_success</title>
+    <script src="../../static/js/jquery.min.js"></script>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+         }
+        .mainbody{
+                width: 997px;
+                height: 150px;
+                background-color: #f0f0f0;
+                /*border: 1px solid red;*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainbody">
+        <span style="position: relative"><img src="/static/img/zuojiantou.png" alt="" style="position:absolute;top: 1px;left: 1px;width: 20px;height: 20px;"></span>
+        <span id="onebyone" style="color: #1296db;font-size: 14px;margin-left: 15px;cursor: pointer">返回</span>
+        <img src="/static/img/duihao.png" alt="" style="width: 30px;height: 30px;position: absolute;top: 307px;left: 654px;">
+        <span style="position: absolute;top: 310px;left: 692px;">支付成功</span>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#onebyone").on('click',function () {
+            console.log(1111)
+            $(".mainbox").load("/onebyone_pay")
+        })
+    })
+</script>
+</html>

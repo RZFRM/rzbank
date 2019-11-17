@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail_query_result</title>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        .mainbody{
+
+            width: 997px;
+            height: 602px;
+            background-color: #f0f0f0;
+            /*border: 1px solid red;*/
+        }
+        .top1{
+
+            width: 100%;
+            height: 35px;
+
+        }
+
+        .ul1{
+            display: block;
+            margin-right: 6px;
+        }
+        .ul1 li{
+
+            float: right;
+            margin-right: 10px;
+            font-size: 14px;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .ul2 li{
+
+            float: left;
+            margin-right: 10px;
+            font-size: 14px;
+
+        }
+
+        .ul3 li{
+
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .table{
+            font-size: 14px;
+            width: 997px;
+            height: 100px;
+            border: none;
+        }
+        .table thead tr{
+            height: 40px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #707088;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="mainbody" id="mainbody">
+<!--    第一行文字-->
+        <div class="top1">
+            <ul class="ul1">
+                <li style="float: left;margin-left: 20px;color: #000">账号:{{ useraccount }}</li>
+                <li style="float: left;margin-left: 20px;color: #000">开户行:中国工商银行</li>
+                <li style="float: left;margin-left: 20px;color: #000">户名:{{ username }}</li>
+            <li id="real">设置表头</li>
+            </ul>
+        </div>
+
+<!--    表格    -->
+        <table class="table" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="color: #fff;">交易时间</th>
+                    <th style="color: #fff;">转出金额</th>
+                    <th style="color: #fff;">转入金额</th>
+                    <th style="color: #fff;">币种</th>
+                    <th style="color: #fff;">余额</th>
+                    <th style="color: #fff;">对方单位</th>
+                    <th style="color: #fff;">对方账号</th>
+                    <th style="color: #fff;">摘要</th>
+                    <th style="color: #fff;">操作</th>
+                    <th style="color: #fff;">详细信息</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in chosed_user %}
+                <tr style="height: 45px">
+                    <td align="center"><span style="color: blue"><input type="checkbox" style="margin-right: 10px">{{ item.deal_time}}</span></td>
+                    <td align="center">{{ item.out_money }}</td>
+                    <td align="center">{{ item.in_money }}</td>
+                    <td align="center">人民币</td>
+                    <td align="center">{{ item.money_left }}</td>
+                    <td align="center">{{ item.vs_name }}</td>
+                    <td align="center">{{ item.vs_account }}</td>
+                    <td align="center">利息</td>
+                    <td align="center"><span id="huidan{{ item.id}}" style="color: blue;cursor: pointer" onclick="huidan(id)">回单</span></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+        <table class="table" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="color: #fff;" colspan="4">合计（人民币）：</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height: 45px">
+                    <td align="center">借方发生额：</td>
+                    <td align="center">借方笔数：</td>
+                    <td align="center">借方冲正发生额：</td>
+                    <td align="center">借方冲正笔数：</td>
+                </tr>
+                <tr style="height: 45px">
+                    <td align="center">贷方发生额：</td>
+                    <td align="center">贷方笔数：</td>
+                    <td align="center">贷方冲正发生额：</td>
+                    <td align="center">贷方冲正笔数：</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <hr>
+<!--    操作部分-->
+        <div id="">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        huidan = function (id) {
+            date = $("#"+id).parent('td').siblings('td')[0].innerText
+            money_out = $("#"+id).parent('td').siblings('td')[1].innerText
+            money_in = $("#"+id).parent('td').siblings('td')[2].innerText
+            vs_name = $("#"+id).parent('td').siblings('td')[5].innerText
+            vs_account = $("#"+id).parent('td').siblings('td')[6].innerText
+            window.location.href = "/huidan?date="+date+"&money_out="+money_out+"&money_in="+money_in+"&vs_name="+vs_name+"&vs_account="+vs_account
+        }
+
+    })
+</script>
+</html>

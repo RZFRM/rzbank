@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reply</title>
+    <script src="../../static/js/jquery.min.js"></script>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+         }
+        .mainbody{
+
+                width: 997px;
+                height: 160px;
+                background-color: #f0f0f0;
+                /*border: 1px solid red;*/
+        }
+        table{
+            border-collapse:collapse;
+            width: 100%;
+        }
+        table tr{
+            border:1px solid #e0e0e0;
+        }
+        table td{
+            border:1px solid #e0e0e0;
+        }
+        button{
+            display: inline-block;
+            margin-left: 392px;
+            margin-top: 20px;
+            background-color: #c9c9c9;
+            width: 90px;
+            height: 25px;
+            line-height: 25px;
+            border: 1px solid #ececeb;
+        }
+        hr{
+            width: 100%;
+            height: 1px;
+            background-color: #5c5c5c;
+        }
+        p{
+            font-size: 14px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="mainbody">
+        <table>
+            <tr>
+                <td colspan="2" bgcolor="75758d" style="color: white;width: 100px;padding-left: 10px">查询条件：</td>
+            </tr>
+            <tr>
+                <td align="center" rowspan="2">1、提问时间：</td>
+                <td>&nbsp&nbsp&nbsp&nbsp从
+                    <select name="year1" id="year1">
+                        <option value="" >2019</option>
+                        <option value="" >2018</option>
+                        <option value="" >2017</option>
+                        <option value="" >2016</option>
+                        <option value="" >2015</option>
+                        <option value="" >2014</option>
+                        <option value="" >2013</option>
+                        <option value="" >2012</option>
+                        <option value="" >2011</option>
+                        <option value="" >2010</option>
+                        <option value="" >2009</option>
+                    </select>
+                    年
+                    <select name="month1" id="month1">
+                        <option value="" >1</option>
+                        <option value="" >2</option>
+                        <option value="" >3</option>
+                        <option value="" >4</option>
+                        <option value="" >5</option>
+                        <option value="" >6</option>
+                        <option value="" >7</option>
+                        <option value="" >8</option>
+                        <option value="" >9</option>
+                        <option value="" >10</option>
+                        <option value="" >11</option>
+                        <option value="" >12</option>
+                    </select>
+                    月
+                    <select name="day1" id="day1">
+                        <option value="" >1</option>
+                        <option value="" >2</option>
+                        <option value="" >3</option>
+                        <option value="" >4</option>
+                        <option value="" >5</option>
+                        <option value="" >6</option>
+                        <option value="" >7</option>
+                        <option value="" >8</option>
+                        <option value="" >9</option>
+                        <option value="" >10</option>
+                        <option value="" >11</option>
+                        <option value="" >12</option>
+                        <option value="" >13</option>
+                        <option value="" >14</option>
+                        <option value="" >15</option>
+                        <option value="" >16</option>
+                        <option value="" >17</option>
+                        <option value="" >18</option>
+                        <option value="" >19</option>
+                        <option value="" >20</option>
+                        <option value="" >21</option>
+                        <option value="" >22</option>
+                        <option value="" >23</option>
+                        <option value="" >24</option>
+                        <option value="" >25</option>
+                        <option value="" >26</option>
+                        <option value="" >27</option>
+                        <option value="" >28</option>
+                        <option value="" >29</option>
+                        <option value="" >30</option>
+
+                    </select>
+                    日
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp&nbsp&nbsp&nbsp至
+                    <select name="year1" id="year2">
+                        <option value="" >2019</option>
+                        <option value="" >2018</option>
+                        <option value="" >2017</option>
+                        <option value="" >2016</option>
+                        <option value="" >2015</option>
+                        <option value="" >2014</option>
+                        <option value="" >2013</option>
+                        <option value="" >2012</option>
+                        <option value="" >2011</option>
+                        <option value="" >2010</option>
+                        <option value="" >2009</option>
+                    </select>
+                    年
+                    <select name="month1" id="month2">
+                        <option value="" >1</option>
+                        <option value="" >2</option>
+                        <option value="" >3</option>
+                        <option value="" >4</option>
+                        <option value="" >5</option>
+                        <option value="" >6</option>
+                        <option value="" >7</option>
+                        <option value="" >8</option>
+                        <option value="" >9</option>
+                        <option value="" >10</option>
+                        <option value="" >11</option>
+                        <option value="" >12</option>
+                    </select>
+                    月
+                    <select name="day1" id="day2">
+                        <option value="" >1</option>
+                        <option value="" >2</option>
+                        <option value="" >3</option>
+                        <option value="" >4</option>
+                        <option value="" >5</option>
+                        <option value="" >6</option>
+                        <option value="" >7</option>
+                        <option value="" >8</option>
+                        <option value="" >9</option>
+                        <option value="" >10</option>
+                        <option value="" >11</option>
+                        <option value="" >12</option>
+                        <option value="" >13</option>
+                        <option value="" >14</option>
+                        <option value="" >15</option>
+                        <option value="" >16</option>
+                        <option value="" >17</option>
+                        <option value="" >18</option>
+                        <option value="" >19</option>
+                        <option value="" >20</option>
+                        <option value="" >21</option>
+                        <option value="" >22</option>
+                        <option value="" >23</option>
+                        <option value="" >24</option>
+                        <option value="" >25</option>
+                        <option value="" >26</option>
+                        <option value="" >27</option>
+                        <option value="" >28</option>
+                        <option value="" >29</option>
+                        <option value="" >30</option>
+
+                    </select>
+                    日
+                </td>
+            </tr>
+            <tr>
+                <td align="center">2、账&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp号：</td>
+                <td >&nbsp&nbsp&nbsp&nbsp<select name="" id="">
+                    <option value="">
+                        0502122009020275336
+                    </option>
+                </select></td>
+            </tr>
+        </table>
+        <button>查询</button>
+        <button style="margin-left: 50px">新建</button>
+        <p style="padding-left: 10px">对不起！没有符合条件的结果！</p>
+        <hr style="margin-top: 50px">
+        <div style="background-color: #f1f1f1">
+            <p>1、如果需要提交新的咨询或预约，请选择账号后，请选择“新建”。</p>
+            <p>2、如果需要查询银行的答复，请输入提问的起始时间和账号后。点击“查询”。</p>
+            <p>3、在符合条件的查询结果中，如果银行已回复点击该申请的“咨询/预约号”，可查询银行回复的具体内容。若银行未回复，则该申请的“咨询/预约号”无链接。</p>
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        $(function () {
+
+        })
+
+    </script>
+</body>
+</html>

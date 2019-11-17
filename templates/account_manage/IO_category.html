@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IO_category</title>
+    <script src="../../static/js/jquery.min.js"></script>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+         }
+        .mainbody{
+
+                width: 997px;
+                height: 602px;
+                background-color: #f0f0f0;
+                /*border: 1px solid red;*/
+            }
+        #mingxi{
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="mainbody">
+        <img id="mingxi" src="../../static/img/mingxi.png" alt="">
+        <img id="asset_anal" style="margin-top: 10px" src="../../static/img/mingxi_bot.png" alt="">
+    </div>
+
+    <script>
+        $(function () {
+            $("#mingxi").on("click", function () {
+                $(".mainbox").load("/detail_query")
+
+            })
+        })
+
+    </script>
+</body>
+</html>

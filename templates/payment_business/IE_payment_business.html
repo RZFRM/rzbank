@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中国工商银行企业网上银行</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            color: #000;
+        }
+        .top{
+            width: 100%;
+            height: 103px;
+        }
+        .w-center{
+            min-width: 1233px;
+            max-width: 1233px;
+            margin: auto;
+            height: 103px;
+            /*border: 1px solid black;*/
+
+        }
+        .w-center2{
+            min-width: 1233px;
+            max-width: 1233px;
+            margin: auto;
+            height: 103px;
+            /*border: 1px solid black;*/
+        }
+
+        .w-center .logo {
+            width: 314px;
+            height: 45px;
+            padding-top: 21px;
+            float: left;
+            display: inline-block;
+            /*border: 1px solid blue;*/
+        }
+        .top .w-center .logo a{
+            background: url(../../static/img/indexlogo.png) no-repeat center;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+
+        }
+        .w-center #w-ul{
+            float: right;
+            margin-top: 34px;
+        }
+        .w-center #w-ul li{
+            font-size: 14px;
+            float: right;
+            margin-left: 30px;
+            color: black;
+        }
+        .w-center #w-ul li img{
+            margin-right: 8px;
+        }
+        .w-center #w-ul input{
+            margin-top:-11px;
+        }
+        .top-top{
+            display: block;
+            /*border: 1px solid;*/
+            width: 100%;
+            height: 66px;
+        }
+        .top-bottom{
+            display: block;
+            width: 100%;
+            height: 37px;
+            /*border: 1px solid yellow;*/
+        }
+        .nav{
+            width: 100%;
+            height: 100px;
+            background-color: #b80020;
+        }
+        .w-center2 ul li{
+            float: left;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+        }
+        .w-center2 ul li:hover{
+            background-color: #a10b17;
+        }
+        .active1{
+           background-color: #a10b17;
+        }
+        .w-center2 ul li a{
+            color: white;
+            line-height: 30px;
+        }
+        .w-center3{
+            min-width: 1233px;
+            max-width: 1233px;
+            margin: auto;
+            height: 103px;
+        }
+        .tip{
+            width: 100%;
+            height: 40px;
+            background-color: #f0f0f0;
+        }
+        .w-center3 ul li{
+            float: left;
+            margin-left: 15px;
+            font-size: 14px;
+
+        }
+        .w-center3 ul li a{
+            line-height: 40px;
+        }
+        .bottom{
+            margin-top: 6px;
+            /*border: #a10b17 1px solid;*/
+
+        }
+        .bottom #left-li{
+
+            margin-top: 0;
+            width: 207px;
+            height: 343px;
+            float: left;
+            /*border:1px solid blue;*/
+            overflow:auto;
+        }
+        .bottom #left-li li{
+            position: relative;
+            width: 93%;
+            height: 40px;
+            background-color: #f0f0f0;
+            text-align: left;
+            line-height: 40px;
+            border-bottom: 1px solid #d7d7d7;
+            padding-left: 17px;
+        }
+        .bottom #left-li li img{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            left: -8px;
+            top: 3px
+        }
+        .bottom-left li:hover{
+            cursor: pointer;
+        }
+        .active2{
+            color: white;
+        }
+        .bottom-right{
+            width: 997px;
+            height: 602px;
+            float: right;
+            /*border: 1px solid red;*/
+        }
+        /*子菜单样式*/
+        .bottom #left-li .sub_menu{
+            display: none;
+            background-color: #f9f9f9;
+
+      }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="w-center">
+        <div class="top-top">
+            <div class="logo">
+                       <a href="http://www.icbc.com.cn/ICBC/default.htm"></a>
+            </div>
+            <ul id="w-ul">
+                <li><input type="text" style="width: 228px;height: 30px"></li>
+                <li><a href=""><img style="border: none" src="../../static/img/logout.png" alt="">退出</a></li>
+                <li><a href=""><img style="border: none" src="../../static/img/demoshow.png" alt="">演示</a></li>
+                <li><img style="border: none" src="../../static/img/mallblogo.png" alt=""><a href="">融e购</a></li>
+            </ul>
+        </div>
+        <div class="top-bottom">
+            <p style="font-size: 13px;margin-top: 8px">尊敬的山西图灵志科技有限公司，您上次登录时间：2019年06月02日 20:35:46 </p>
+        </div>
+    </div>
+</div>
+<!--红色导航-->
+<div class="nav">
+    <div class="w-center2">
+        <ul>
+            <li id="m-1"><a href="">欢迎页面</a></li>
+            <li id="m-2"><a href="">账户管理</a></li>
+            <li id="m-3"><a href="">收款业务</a></li>
+            <li id="m-4"><a href="">付款业务</a></li>
+            <li id="m-5"><a href="">集团理财</a></li>
+            <li id="m-6"><a href="">国际业务</a></li>
+            <li id="m-7"><a href="">投资理财</a></li>
+            <li id="m-8"><a href="">企业年金</a></li>
+    </ul>
+        <ul>
+            <li id="m-9"><a href="">商务卡管理</a></li>
+            <li id="m-10"><a href="">托管服务</a></li>
+            <li id="m-11"><a href="">指令查询与处理</a></li>
+            <li id="m-12"><a href="">监管审批</a></li>
+            <li id="m-13"><a href="">投资银行</a></li>
+            <li id="m-14"><a href="">交易所会员服务</a></li>
+            <li id="m-15"><a href="">海关业务</a></li>
+            <li id="m-16"><a href="">薪酬福利</a></li>
+    </ul>
+        <ul>
+            <li id="m-17"><a href="">中介合作平台</a></li>
+            <li id="m-18"><a href="">投资管理</a></li>
+            <li id="m-19"><a href="">贵金属企业合作平台</a></li>
+            <li id="m-20"><a href="">客户服务</a></li>
+            <li id="m-21"><a href="">本地特色</a></li>
+    </ul>
+
+    </div>
+</div>
+<!--红色导航下tip-->
+<div class="tip">
+    <div class="w-center3">
+        <ul>
+            <li style="color: #b21f2d;line-height: 40px">常用功能:</li>
+            <li><a href="">账户管理-明细查询</a></li>
+            <li><a href="">转账汇款-逐笔支付</a></li>
+            <li><a href="">网上汇款-收款人名册</a></li>
+            <li><a href="">企业财务室-批量支付</a></li>
+            <li><a href="">账户管理银行对账</a></li>
+        </ul>
+    </div>
+
+</div>
+<!--下面窗体-->
+<div class="bottom">
+    <div  class="w-center">
+        <ul class="bottom-left" id="left-li">
+<!--            一级菜单--网上汇款-->
+            <li id="online_remittance" class="menu"><img id="online_remittance_pic" name="pic" src="../../static/img/right_arrow.png" alt="">网上汇款</li>
+<!--            二级菜单--转账汇款-->
+            <li id="transfer_remittance" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;"><img  id="transfer_remittance_pic" name="pic" src="../../static/img/right_arrow.png" alt="" style="position:absolute;left: 0px">转账汇款</li>
+<!--            三级菜单--逐笔支付、批量支付、指令查询-->
+            <li id="onebyone_pay" class="menu sub_menu" name="online_remi_transfer" style="padding-left: 35px;">逐笔支付</li>
+            <li id="batch_pay" class="menu sub_menu" name="online_remi_transfer" style="padding-left: 35px;">批量支付</li>
+            <li id="order_query" class="menu sub_menu" name="online_remi_transfer" style="padding-left: 35px;">指令查询</li>
+<!--            二级菜单--付款预约-->
+            <li id="payment_reservation" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;"><img id="payment_reservation_pic" name="pic" src="../../static/img/right_arrow.png" alt="" style="position:absolute;left: 0px">付款预约</li>
+<!--            三级菜单-->
+            <li id="sub_payment_reservation" class="menu sub_menu" name="online_remi_reservation" style="padding-left: 35px;">付款预约</li>
+            <li id="mana_payment_reservation" class="menu sub_menu" name="online_remi_reservation" style="padding-left: 35px;">管理付款预约</li>
+            <li id="order_query_reservation" class="menu sub_menu" name="online_remi_reservation" style="padding-left: 35px;">指令查询</li>
+<!--            二级菜单--同城票交汇款-->
+            <li id="same_city_remittance" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;"><img id="same_city_remittance_pic" name="pic" src="../../static/img/right_arrow.png" alt="" style="position:absolute;left: 0px">同城票交汇款</li>
+<!--            三级菜单-->
+            <li id="onebyone_pay_city" class="menu sub_menu" name="online_remi" style="padding-left: 35px;">逐笔支付</li>
+            <li id="batch_pay_city" class="menu sub_menu" name="online_remi" style="padding-left: 35px;">批量支付</li>
+            <li id="order_query_city" class="menu sub_menu" name="online_remi" style="padding-left: 35px;">指令查询</li>
+<!--            二级菜单--贷款资金汇款-->
+            <li id="loan_pay" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;"><img id="loan_pay_pic" name="pic" src="../../static/img/right_arrow.png" alt="" style="position:absolute;left: 0px">贷款资金汇款</li>
+<!--            三级菜单-->
+            <li id="onebyone_pay_loan" class="menu sub_menu" name="online_remi" style="padding-left: 35px;">逐笔支付</li>
+            <li id="order_query_loan" class="menu sub_menu" name="online_remi" style="padding-left: 35px;">指令查询</li>
+<!--            二级菜单--收款人名册-->
+            <li id="get_person_roll" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;">收款人名册</li>
+<!--            二级菜单--交易快照-->
+            <li id="quick_shot" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;">交易快照</li>
+<!--            二级菜单--跨行支付查询-->
+            <li id="cross_field_query" class="menu sub_menu" name="online_remi2" style="padding-left: 25px;">跨行支付查询</li>
+
+<!--            一级菜单--多银行付款台-->
+            <li id="multi_bank_paybar" class="menu"><img name="pic" src="../../static/img/right_arrow.png" alt="">多银行付款台</li>
+<!--            二级菜单-->
+            <li id="order_query_multi" class="menu sub_menu" style="padding-left: 25px;">指令查询</li>
+<!--            一级菜单--向证券登记公司汇款-->
+            <li id="bond_corp_pay" class="menu" >向证券登记公司汇款</li>
+<!--            一级菜单--个人账户挂接转账-->
+            <li id="per_acc_link_transfer" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt="">个人账户挂接转账</li>
+            <li id="easy_pay" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt=""><img name="pic" src="../../static/img/right_arrow.png" alt="">易企付</li>
+            <li id="electric_pay" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt=""><img name="pic" src="../../static/img/right_arrow.png" alt="">电子商务支付</li>
+
+            <li id="entrust_withhold" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt=""><img name="pic" src="../../static/img/right_arrow.png" alt="">委托代扣</li>
+            <li id="electic_get_bill" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt=""><img name="pic" src="../../static/img/right_arrow.png" alt="">电子收款账单</li>
+            <li id="inner_out_remittance" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt="">境内外汇汇款</li>
+            <li id="cross_field_remittance" class="menu"><img name="pic" src="../../static/img/right_arrow.png" alt="">跨境汇款</li>
+            <li id="corp_financial_room" class="menu" ><img name="pic" src="../../static/img/right_arrow.png" alt="">企业财务室</li>
+            <li id="online_pay" class="menu"><img name="pic" src="../../static/img/right_arrow.png" alt="">在线缴费</li>
+            <li id="daifa_salary2" class="menu">代发工资</li>
+            <li id="bank_tax_link" class="menu">银税通</li>
+            <li id="audit_and_reimbursement" class="menu">单位公务卡审核报销</li>
+            <li id="public_donation" class="menu">公益捐款</li>
+            <li id="SWIFT" class="menu">SWIFT报文查询</li>
+            <li id="credit" class="menu">国内信用用证业务</li>
+            <li id="outfield_check" class="menu">境外支票签发</li>
+            <li id="electic_bill" class="menu">电子发票</li>
+            <li id="foreign_fund_huabo" class="menu">外币资金划拨</li>
+            <li id="e_corp_pay" class="menu">工银e企付</li>
+        </ul>
+<!--    加载右侧页面-->
+        <div class="bottom-right">
+            <div class="mainbox">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src = '../../static/js/jquery.min.js'></script>
+<script>
+    // ie浏览器不能直接标签里onclick,这里做兼容书写
+    document.getElementById("m-4").className = 'active1';
+    var li = document.getElementsByClassName('menu');
+    //下标要改，来适应不同的下拉菜单，因为下面的contains方法
+    //个人账户挂接  0
+    //银企对账      1
+    //收款管家      2
+    //商户服务      3
+
+    var online_remi_pic = document.getElementById("online_remittance_pic")
+    var transfer_remittance_pic = document.getElementById("transfer_remittance_pic")
+    var payment_reservation_pic = document.getElementById("payment_reservation_pic")
+    // var same_city_remittance_pic = document.getElementById("same_city_remittance_pic")
+    // console.log(online_remi_pic);
+    len = li.length;
+    var flag = 1;
+    for(var i=0;i<len;i++){
+        //console在ie也不能用，用于谷歌调试
+        //跑ie时要注释掉
+        // console.log(li[i])
+        li[i].onclick = function(){
+            // console.log(this) //点击谁就输出谁
+            // console.log(len);
+            // console.log(this.className.indexOf('sub_menu')
+            // 下拉菜单处理(一级菜单点击)
+            if(this.innerText.indexOf("网上汇款")>-1 && this.contains(online_remi_pic)){
+
+                // 下拉菜单是否显示
+                sub_menu_lst = document.getElementsByName("online_remi2")
+                // alert(sub_menu_lst.length)
+                for(var j=0;j<sub_menu_lst.length;j++){
+
+                    if(sub_menu_lst[j].style.display.indexOf("none")>-1){
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "block";
+                        // 左右箭头变换
+                        online_remi_pic.setAttribute("src","../../static/img/bottom_arrow.png")
+
+                    }
+                    else{
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "none"
+                        // 左右箭头变换
+                        online_remi_pic.setAttribute("src","../../static/img/right_arrow.png")
+                    }
+                }
+
+            }
+            // 下拉菜单处理(二级菜单"转账汇款"点击)
+            if(this.innerText.indexOf("转账汇款")>-1 && this.contains(transfer_remittance_pic)){
+
+                // 下拉菜单是否显示
+                sub_menu_lst = document.getElementsByName("online_remi_transfer")
+                // alert(sub_menu_lst.length)
+                for(var j=0;j<sub_menu_lst.length;j++){
+
+                    if(sub_menu_lst[j].style.display.indexOf("none")>-1){
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "block";
+                        // 左右箭头变换
+                        transfer_remittance_pic.setAttribute("src","../../static/img/bottom_arrow.png")
+
+                    }
+                    else{
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "none"
+                        // 左右箭头变换
+                        transfer_remittance_pic.setAttribute("src","../../static/img/right_arrow.png")
+                    }
+                }
+
+            }
+             // 下拉菜单处理(二级菜单"付款预约"点击)
+            if(this.innerText.indexOf("付款预约")>-1 && this.contains(payment_reservation_pic)){
+
+                // 下拉菜单是否显示
+                sub_menu_lst = document.getElementsByName("online_remi_reservation")
+                // alert(sub_menu_lst.length)
+                for(var j=0;j<sub_menu_lst.length;j++){
+
+                    if(sub_menu_lst[j].style.display.indexOf("none")>-1){
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "block";
+                        // 左右箭头变换
+                        payment_reservation_pic.setAttribute("src","../../static/img/bottom_arrow.png")
+
+                    }
+                    else{
+                        // alert(j)
+                        sub_menu_lst[j].style.display = "none"
+                        // 左右箭头变换
+                        payment_reservation_pic.setAttribute("src","../../static/img/right_arrow.png")
+                    }
+                }
+
+            }
+
+
+
+
+            // 背景颜色处理
+            for(var i=0;i<len;i++){
+                if(this.parentNode.children[i].className.indexOf("sub_menu")>-1){
+                    // alert(i)
+                    this.parentNode.children[i].style.backgroundColor = '#f9f9f9';
+                    this.parentNode.children[i].style.color = '#000'
+                }else{
+                    this.parentNode.children[i].style.backgroundColor = '#f0f0f0';
+                    this.parentNode.children[i].style.color = '#000'
+                }
+            }
+
+            //判断有无img标签，实现子菜单
+            if(!this.children[0]){
+                this.style.backgroundColor = '#b80020';
+                this.style.color = '#fff'
+            }else {
+                console.log(111)
+            }
+
+
+        }
+    }
+    $(function () {
+        $(".mainbox").load("onebyone_pay.html")
+        $(".bottom-left").on("click","li",function () {
+            var sId = $(this).context.id;
+            // alert(sId)
+            loadInner(sId)
+        });
+        function loadInner(sId) {
+
+            var pathn;
+            switch (sId) {
+                case "onebyone_pay":
+                    pathn= "onebyone_pay.html";
+                    break;
+                case "detail_query":
+                    pathn= "detail_query.html";
+                    break;
+                case "electronic_bill":
+                    pathn= "electronic_bill.html";
+                    break;
+                case "report_query":
+                    pathn= "report_query.html";
+                    break;
+                case "bank_corp":
+                    pathn= "bank_corp.html";
+                    break;
+
+            }
+            $(".mainbox").load(pathn)
+        }
+    })
+
+</script>
+</body>
+
+</html>

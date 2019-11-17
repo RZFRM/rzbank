@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>close_bank_corp</title>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        .mainbody{
+            padding-top: 30px;
+            width: 997px;
+            height: 180px;
+            background-color: #f0f0f0;
+            /*border: 1px solid red;*/
+        }
+
+        .table{
+            font-size: 14px;
+            width: 997px;
+            height: 100px;
+            border: none;
+        }
+        .table thead tr{
+            height: 40px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #707088;
+        }
+
+        /*关闭部分*/
+        #bot-btn{
+
+            width: 100%;
+            height: 50px;
+            /*border: 1px solid red;*/
+        }
+        #close{
+            margin-left: 455px;
+            margin-top: 18px;
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        td{
+            text-align: center;
+        }
+        .close_tip{
+            padding-top: 18px;
+            margin-top: 60px;
+            width: 100%;
+            height: 60px;
+            background-color: #f0f0f0;
+            /*border: 1px solid red;*/
+        }
+        p{
+            margin-left: 10px;
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="mainbody" id="mainbody">
+<!--    表格    -->
+        <table class="table" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="color: #fff;">账号</th>
+                    <th style="color: #fff;">开通日期</th>
+                    <th style="color: #fff;">开通渠道</th>
+                    <th style="color: #fff;">对账周期</th>
+                    <th style="color: #fff;">操作人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"><span style="margin-left: 30px">0502122009020275336</span></td>
+                    <td>2017-11-06</td>
+                    <td>网银</td>
+                    <td>季</td>
+                    <td>0503938299399.c.0502(赵卫华)</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <hr>
+<!--    关闭部分-->
+        <div id="bot-btn">
+            <span id ="close">关闭</span>
+        </div>
+<!--        tip-->
+        <div class="close_tip">
+            <p>1、选择账号前的复选框，点击“关闭”，可以关闭该账户通过网上银行自助对账弟弟服务，该账户选择可以是多选。</p>
+            <p>2、如果您需要修改对账周期，可以先在这里撤销该账户的网银对账服务，再重新开通该服务时选择不同的对账周期。</p>
+        </div>
+    </div>
+
+</body>
+</html>

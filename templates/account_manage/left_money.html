@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>left_money</title>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        .mainbody{
+
+            width: 997px;
+            height: 602px;
+            background-color: #f0f0f0;
+            /*border: 1px solid red;*/
+        }
+        .top1{
+
+            width: 100%;
+            height: 35px;
+
+        }
+
+        /*p{*/
+        /*    font-size: 14px;*/
+        /*    color: blue;*/
+
+        /*}*/
+        .ul1{
+            display: block;
+            margin-right: 6px;
+        }
+        .ul1 li{
+
+            float: right;
+            margin-right: 10px;
+            font-size: 14px;
+            color: blue;
+            cursor: pointer;
+        }
+        .ul2{
+            margin-left: 10px;
+        }
+        .ul2 li{
+
+            float: left;
+            margin-right: 10px;
+            font-size: 14px;
+
+        }
+        .ul3{
+            margin-top: -10px;
+            margin-right: 18px;
+            float: right;
+            font-size: 14px;
+        }
+        .ul3 li{
+
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .table{
+            font-size: 14px;
+            width: 997px;
+            height: 100px;
+            border: none;
+        }
+        .table thead tr{
+            height: 40px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #707088;
+        }
+
+        #mo{
+            display: none;/*隐藏*/
+            width: 790px;
+            height: 410px;
+            /*border:1px solid red;*/
+            position: absolute;
+            overflow: auto;
+            background-color: #fff;
+            margin-top: 35px;
+            margin-left: 99px;
+            z-index: 1;
+        }
+
+        .close{
+            font-size: 24px;
+            position: absolute;
+            top: 13px;
+            right: 20px;
+            color:#000;
+        }
+        .close:hover,
+        .close:focus{
+            color:#bbb;
+            cursor:pointer;
+        }
+        .motai-main{
+            width: 726px;
+            height: 378px;
+            margin: 0 auto;
+            /*border: 1px solid blue;*/
+        }
+        .motai-top{
+            width: 100%;
+            height: 30px;
+            /*border: 1px solid red;*/
+        }
+        .motai-top2{
+            font-size: 12px;
+            color: #c2c2c2;
+        }
+        .chosed,.unchosed{
+            height: 80px;
+            width: 100%;
+        }
+        .chosed li,.unchosed li{
+            float: left;
+            margin-right: 20px;
+            height: 30px;
+            width: 118px;
+            cursor: pointer;
+        }
+
+        .chosed li img,.unchosed li img{
+            width: 13px;
+            height: 13px;
+            margin-right: 6px;
+
+        }
+
+        /*模态阴影*/
+        #shadow{
+            position: absolute;
+            display: none;
+            width: 997px;
+            height: 602px;
+            background-color: rgba(194,194,194,0.3)
+        }
+        /*下载部分*/
+        #bot-btn{
+            margin-top: 80px;
+            width: 100%;
+            height: 50px;
+            /*border: 1px solid red;*/
+        }
+        #print{
+            margin-left: 261px;
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #select{
+            margin-left: 25px;
+            margin-top: 1px;
+            margin-right: -5px;
+            width: 140px;
+            height: 32px;
+        }
+        #download{
+
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #set{
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            text-align: center;
+            background-color: #d8d8d8;
+            line-height: 30px;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+        /*模态框按钮部分*/
+        #motai-btn{
+            margin-top: 60px;
+            width: 100%;
+            height: 40px;
+            /*border: 1px solid red;*/
+        }
+        #motai-save{
+            margin-left: 170px;
+            display: inline-block;
+            width: 110px;
+            height: 35px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 35px;
+            cursor: pointer;
+        }
+        #motai-default,#motai-cancel{
+            margin-left: 10px;
+            display: inline-block;
+            width: 110px;
+            height: 35px;
+            text-align: center;
+            background-color: #d8d8d8;
+            color: #000;
+            line-height: 35px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!--    模态阴影-->
+    <div id="shadow_f" style="position: relative">
+        <div id="shadow">
+
+        </div>
+    </div>
+
+    <div class="mainbody" id="mainbody">
+<!--    第一行文字-->
+        <div class="top1" >
+            <ul style="margin-left: 10px">
+                <li style="cursor: pointer; color: blue;font-size: 14px;line-height: 30px">切换至旧版</li>
+            </ul>
+        </div>
+<!--    第二行文字-->
+        <div class="top1">
+            <ul class="ul1">
+            <li id="asset_analysis">资产负债分析</li>
+            <li id="real">设置表头</li>
+            </ul>
+        </div>
+<!--    字段模态框-->
+        <div class="motai" id="mo">
+<!--        关闭-->
+            <div class="motai-top">
+                    <p class="close" id="close">×</p>
+            </div>
+<!--        主体-->
+            <div class="motai-main">
+                <p class="motai-top2" style="margin-bottom: 10px">已选字段</p>
+                <ul class="chosed">
+                    <li>
+                        <img src="../../static/img/jianhao_grey.png" alt="">
+                        账户及户名
+                    </li>
+                    <li class="jian" style="width: 100px;">
+                        <img src="../../static/img/jianhao.png" alt="">
+                        别名
+                    </li>
+                    <li class="jian" style="width: 137px;">
+                        <img src="../../static/img/jianhao.png" alt="">
+                        币种(钞汇标志)
+                    </li>
+                    <li>
+                        <img src="../../static/img/jianhao_grey.png" alt="">
+                        当前余额
+                    </li>
+                    <li class="jian">
+                        <img src="../../static/img/jianhao.png" alt="">
+                        可用余额
+                    </li>
+                    <li class="jian">
+                        <img src="../../static/img/jianhao.png" alt="">
+                        昨日余额
+                    </li>
+
+
+                </ul>
+                <hr width="100%" style="margin-top:-24px;border:0.5px solid grey;"/>
+                <p class="motai-top2" style="margin-top: 10px;margin-bottom: 10px">未选字段</p>
+                <ul class="unchosed">
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        账户属性
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        开户行名称
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        保留余额
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        冻结余额
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        查询时间
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        当地时间
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        最后计息日
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        最后交易日
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        通兑标志
+                    </li>
+                    <li class="plus">
+                        <img src="../../static/img/plus.png" alt="">
+                        通存标志
+                    </li>
+                </ul>
+                <p class="motai-top2" style="color: #c2c2c2;font-size: 12px;margin-left: 10px;margin-top: -10px">温馨提示：您可定制表头字段，点击"+" , "-"号可增减字段，拖动字段可调整排列顺序</p>
+                <!--        保存-->
+                <div id="motai-btn">
+                    <span id ="motai-save">保存</span>
+                    <span id="motai-default">恢复默认</span>
+                    <span id="motai-cancel">取消</span>
+                </div>
+            </div>
+
+        </div>
+
+<!--    第三行文字-->
+        <div class="top1">
+            <ul class="ul2">
+                <li>地区：太原</li>
+                <li>单位名称：<span style="color: blue;cursor: pointer">{{ user.name }}</span></li>
+
+            </ul>
+            <ul class="ul3">
+                <li style="color: blue">下载余额</li>
+            </ul>
+        </div>
+<!--    表格    -->
+        <table class="table" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="color: #fff;">账号</th>
+                    <th style="color: #fff;">别名</th>
+                    <th style="color: #fff;">币种</th>
+                    <th style="color: #fff;">当前余额</th>
+                    <th style="color: #fff;">可用余额</th>
+                    <th style="color: #fff;">昨日余额</th>
+                    <th style="color: #fff;">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height: 45px">
+                    <td align="center"><span style="color: blue">{{ user.account_num }}</span></td>
+                    <td align="center"><input style="height: 30px" type="text" placeholder="请输入别名"></td>
+                    <td align="center">人民币</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center"><span style="color: blue;cursor: pointer">明细</span> <span style="color: blue;cursor: pointer">实时对账</span></td>
+                </tr>
+                <tr style="height: 80px">
+                    <td colspan="3" align="left" style="padding-left: 34px">余额汇总(人民币)</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center">{{ user.left_money }}</td>
+                    <td align="center"></td>
+                </tr>
+            </tbody>
+
+        </table>
+        <hr>
+<!--    下载部分-->
+        <div id="bot-btn">
+            <span id ="print">打印</span>
+            <select name="select" id="select">
+                <option>EXCEL(.xls)</option>
+                <option>EXCEL(.csv)</option>
+                <option>文本(.dlt)</option>
+
+            </select>
+            <span id="download">下载</span>
+            <span id="set">设置下载内容</span>
+        </div>
+    </div>
+    <script>
+        var motai=document.getElementById('mo')
+        var real=document.getElementById("real")
+        var shadow=document.getElementById("shadow")
+
+        real.onclick=function(){
+            motai.style.display="block"
+            shadow.style.display="block"
+
+        }
+        var span=document.getElementById("close");
+
+        span.onclick=function(){
+            motai.style.display="none";
+            shadow.style.display="none";
+
+        };
+        $(function () {
+            $(".chosed").on("click", "li", function () {
+                var img = $(this).context.children[0]
+                src = img.getAttribute("src"); //拿到src
+                if(src.indexOf("jianhao_grey.png")===-1){
+                    src2 = src.toString()
+                    src3 = src2.replace('jianhao.png','plus.png')
+                    $(this).context.children[0].setAttribute("src",src3)
+                    $(".unchosed").append(this)
+                }else {
+                    console.log("不能点击")
+                }
+
+
+            });
+            $(".unchosed").on("click", "li", function () {
+                var img = $(this).context.children[0]; //拿到img标签
+                src = img.getAttribute("src"); //拿到src
+                src2 = src.toString()
+                src3 = src2.replace('plus.png','jianhao.png')
+                $(this).context.children[0].setAttribute("src",src3)
+                $(".chosed").append(this)
+
+            });
+            $("#motai-btn").on("click","span",function(){
+                motai.style.display="none";
+                shadow.style.display="none";
+            });
+            $("#asset_analysis").on("click", function () {
+                $(".mainbox").load("/on_debt")
+
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onebyone_pay</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .top1{
+            margin-bottom: 15px;
+            width: 100%;
+            height: 35px;
+
+        }
+        .detail_body{
+
+                width: 997px;
+                height: 760px;
+                background-color: #f0f0f0;
+                /*border: 1px solid red;*/
+        }
+        #asset_right_ul li{
+            float: left;
+            margin-right: 15px;
+            cursor: pointer; color: blue;font-size: 14px;line-height: 30px
+        }
+        .asset_body_bottom{
+            width: 666px;
+            height: 300px;
+            margin: 0 auto;
+
+            /*border: 1px solid red;*/
+        }
+        .asset_body_bottom div .input1,.asset_body_bottom div select{
+            width: 280px;
+            height: 25px;
+        }
+        #detail-btn{
+            margin-top: 60px;
+            width: 100%;
+            height: 40px;
+            /*border: 1px solid red;*/
+        }
+        #detail_submit{
+            margin-left: 251px;
+            display: inline-block;
+            width: 110px;
+            height: 35px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 35px;
+            cursor: pointer;
+        }
+
+        /*下面按钮*/
+        .query_type{
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .query_type_on{
+            background-color: #b80020;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        .query_type_off{
+            background-color: #fff;
+            color: #b80020;
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        #bottom_tips{
+            padding-top: 15px;
+            color: #b0b0b0;
+            font-size: 14px;
+            margin-top: 30px;
+            width: 997px;
+            height: 400px;
+            background-color: #f0f0f0;
+        }
+        #bottom_tips div{
+            color: #b0b0b0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="detail_body">
+        <!--    第一行文字-->
+        <div class="top1" >
+            <ul style="margin-left: 10px;display: inline-block">
+                <li style="cursor: pointer; color: blue;font-size: 14px;line-height: 30px">切换至旧版</li>
+            </ul>
+        </div>
+
+        <div class="asset_body_bottom">
+<!--            1、汇款单位信息-->
+            <p style="font-size: 20px;margin-bottom: 20px">1、汇款单位信息</p>
+            <div>
+                <span><span style="color: red">*</span>汇款单位：</span>
+                <input class="input1" type="text" value="{{ user.name }}">
+                <span style="color: blue;margin-left: 18px">交易快照</span>
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red">*</span>汇款账号：</span>
+                <input class="input1" type="text" value="{{ user.account_num }}">
+                <span style="color: blue;margin-left: 18px">可用余额查询</span>
+            </div>
+<!--            2、收款单位信息及金额-->
+            <hr style="width: 1000px;height: 1px;background-color: #f9f9f9;margin-left: -171px;margin-top: 30px">
+            <p style="font-size: 20px;margin-bottom: 20px;margin-top: 20px">2、收款单位信息及金额</p>
+            <div>
+                <span><span style="color: red">*</span>收款单位：</span>
+                <input id="receive" class="input1" type="text"  placeholder="可下拉选择、模糊匹配、手动录入">
+                <span style="color: blue;margin-left: 18px">收款人名册</span>
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red">*</span>收款账号：</span>
+                <input id="receive_account" class="input1" type="text" placeholder="可下拉选择、模糊匹配、手动录入">
+                
+            </div>
+            <div style="margin-top: 10px">
+                <span style="margin-left: -38px"><span style="color: red">*</span>收款银行/行别：</span>
+                <input class="input1" type="text" value="" ><input type="checkbox" style="margin-left: 23px">智能匹配收款银行
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red">*</span>汇款金额：</span>
+                <input id="money" class="input1" type="text" value="" >
+            </div>
+<!--            3、汇款用途及短信-->
+            <hr style="width: 1000px;height: 1px;background-color: #f9f9f9;margin-left: -171px;margin-top: 30px">
+            <p style="font-size: 20px;margin-bottom: 20px;margin-top: 20px">3、汇款用途及短信</p>
+            <div>
+                <span><span style="color: red">*</span>汇款用途：</span>
+                <select class="input1" name="" id="">
+                    <option value="">退休金</option>
+                    <option value="">贷款</option>
+                    <option value="">采购款</option>
+                    <option value="">借款</option>
+                    <option value="">拨款</option>
+                    <option value="">还款</option>
+                    <option value="">上交款</option>
+                    <option value="">旅差费</option>
+                    <option value="">运费</option>
+                </select><input type="checkbox" style="margin-left: 23px"><span style="color: #b0b0b0">新增用途自动保存</span>
+            </div>
+            <div style="margin-top: 10px">
+                <span style="margin-left: 40px">备注：</span>
+                <input class="input1" type="text" value="" placeholder="最多可输入30个汉字"><input type="checkbox" style="margin-left: 23px"><span style="color: #b0b0b0">添加为常用备注</span>
+            </div>
+            <div style="margin-top: 10px">
+                <span style="margin-left: 8px">预约执行：</span>
+                <div class="query_type query_type_on" id="query_type1">是</div>
+                <div class="query_type" style="margin-left: -4px" id="query_type2">否</div>
+
+            </div>
+
+            <div id="detail-btn">
+                <span id ="detail_submit">提交</span>
+            </div>
+
+        </div>
+
+    </div>
+<!--    下面提示-->
+    <div id="bottom_tips">
+        <div style="margin-left: 15px">
+            1、因跨行系统暂停、收款行信息不完整或需要人工审核等情况，实际汇款时间可能延迟，请您关注汇款处理状态。人民银行跨行大额支付系统工作时间一般为工作日（T日）的前一自然日（T－1日）的20:30至该工作日（T日）的17:00；如遇国家特殊假日、年终等，以人民银行公布时间为准。<br>
+            2、本栏目只能支付账户的自有资金，若您要支付网贷通的贷款资金，请到“网络融资-我的融资-我的贷款”栏目下操作，若您要支付小企业贷款资金，请到“付款业务-网上汇款-贷款资金汇款-逐笔支付”操作。<br>
+            3、手续费收费标准请参照 <a href="" style="color: blue">服务价目表</a>，收费项目为对公电子银行转账汇款手续费。<br>
+            4、我行将根据您的要求在“付款成功”、“付款失败”、“授权拒绝”、通知“授权人员”等情况下向对应手机发送短信。<br>
+            5、“付款成功”是指从我行从付款账号付出资金的情况；“付款失败”是指我行已经成功接收到指令信息，但由于账户余额不足等原因导致付款失败的情况；“授权拒绝”是指指令被授权人员拒绝的情况；“授权人员”指向您指定的授权人员发送短信，通知其登录企业网银对指令授权。<br>
+            6、您可以在“收款人名册”为收款账号设置通知号码和联系人，以方便在付款时通知收款人员。<br>
+            7、您可以在“客户服务-工银信使-账户联系人管理”为付款账号设置通知号码和联系人，以方便在付款失败时通知相关人员。<br>
+            8、预约执行是指工商银行根据您提交的预约付款指令，在指定交易日期为您办理账户资金转出的业务。当日预约将按照约定时间开始办理，非当日预约的指令会在执行当日尽快为您办理。如遇指令较多，可能会有延迟现象，请您稍后查询执行结果。<br>
+            9、如果您仅开通了向指定账户转账汇款功能，其收款账号只能选择您指定的账户。<br>
+        </div>
+
+    </div>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#query_type1").on("click",function () {
+                this.className= "query_type_on"
+                document.getElementById("query_type2").className = "query_type_off"
+            });
+            $("#query_type2").on("click",function () {
+                this.className= "query_type_on"
+                document.getElementById("query_type1").className = "query_type_off"
+            });
+
+            $("#detail_submit").on("click",function () {
+                recieve_name = document.getElementById("receive").valueOf().value
+                recieve_account = document.getElementById("receive_account").valueOf().value
+                money = document.getElementById("money").valueOf().value
+                $(".mainbox").load("/onebyone_pay_success?recieve_name="+recieve_name+"&recieve_account="+recieve_account+"&money="+money)
+            });
+        })
+    </script>
+
+</body>
+</html>

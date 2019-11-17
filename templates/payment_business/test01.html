@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            font-family: "微软雅黑";
+        }
+        .layui-layer-title {
+            padding: 0 80px 0 20px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            color: #333;
+            overflow: hidden;
+            border-radius: 2px 2px 0 0;
+        }
+        .layui-layer-page .layui-layer-content {
+            position: relative;
+            padding: 30px 30px 30px 30px;
+            min-height: 50px;
+            overflow: auto;
+        }
+        .layui-layer-content {
+            {#position: relative;#}
+        }
+        .win-center {
+            padding: 10px 30px 10px 30px;
+            {#overflow: hidden;#}
+        }
+        .sfxz-box .left-box, .sfxz-box .right-box {
+            float: left;
+            width: 50%;
+            height: 400px;
+        }
+        {#左右两个标题#}
+        .sfxz-box .sfxz-title {
+            height: 40px;
+            {#background-image: url(../tax-images/common/h4_bg.png);自己拿过来#}
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+        }
+        {#左边盒子#}
+        .sfxz-center {
+            border: 1px solid #dfdfdf;
+            border-radius: 3px;
+            height: 288px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        {#请选择企业div#}
+        .sfxz-search {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        {#输入框#}
+        #qykeywords {
+            height: 30px;
+            margin-left: 49px;
+        }
+        .searchbtn {
+            display: inline-block;
+            background-color: #5fa3f1;
+            color: #fff;
+            line-height: 34px;
+            height: 34px;
+            padding: 0 15px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="layui-layer layui-layer-page" id="layui-layer5" type="page" times="5" showtime="0" contype="object" style="z-index: 19891019; width: 1000px; top: -72px; left: 180px;"><div class="layui-layer-title" style="cursor: move;">办税身份选择</div><div id="" class="layui-layer-content" style="height: 420px;"><div class="win-center layui-layer-wrap" id="chooseNsr" style="">
+	<div class="sfxz-box">
+
+		<div class="left-box">
+			<div class="qybs-itme">
+
+				<h4 class="sfxz-title"><span>企业办税</span></h4>
+
+				<div class="sfxz-center">
+
+					<div id="qysfTitle" class="sfxz-search"><span>请选择企业</span><input type="text" id="qykeywords" name="qykeywords"><a class="searchbtn" href="#" id="seachQy" name="seachQy">查询</a></div>
+
+					<div id="nsrzt" class="qybs-list-item">
+					<li class="active" qybdid="0EFC0060D57441859C2CEE689AEBC8F2" sxqybz="Y">广州立茵家园艺有限公司（广州立茵家园艺有限公司-法定代表人）  </li></div>
+
+					<div class="qybs-add-btn" id="addQysf2"><img src="style/bj/images/common/icon_add.png"><span onclick="newQysf()">企业绑定</span></div>
+
+				</div>
+
+				<div class="btnbox">
+					<button id="qyjrBtn" class="btn btn01" onclick="selectQy()">企业进入</button>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="right-box ">
+			<div class="grbs-itme">
+				<h4 class="sfxz-title"><span>个人办税</span></h4>
+				<div class="sfxz-center">
+					<!-- 没有实名  -->
+
+
+
+
+					<!-- 已经实名，没有授权数据  回传标志-->
+					<div id="smzxx" class="grbs-list-item">
+						<li id="qhsf_yhmc">用户姓名：陈昌晓</li>
+						<li id="qhsf_zjlx">证件类型：居民身份证</li>
+						<li id="qhsf_zjhm">证件号码：440923********5933</li>
+						<li id="qhsf_zjyxq">证件有效期：2023-05-12</li>
+					</div>
+
+				</div>
+				<div class="btnbox">
+					<button class="layui-btn" onclick="selectGr();">个人进入</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div><span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span></div>
+</body>
+</html>

@@ -147,8 +147,18 @@ def onebyone_pay(request):
     return render(request, 'payment_business/onebyone_pay.html', {'user': user})
 
 
+def onebyone_private(request):
+    u_password = request.COOKIES.get('user')
+    user = Account.objects.get(u_password=u_password)
+    return render(request, 'payment_business/onebyone_private.html', {'user': user})
+
+
 def batch_pay(request):
     return render(request, 'payment_business/batch_pay.html')
+
+
+def batch_private_pay(request):
+    return render(request, 'payment_business/batch_private_pay.html')
 
 
 def download_template(request):

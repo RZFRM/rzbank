@@ -47,7 +47,7 @@
             /*border: 1px solid red;*/
         }
         #detail-save{
-            margin-left: 251px;
+            margin-left: 400px;
             display: inline-block;
             width: 110px;
             height: 35px;
@@ -87,9 +87,9 @@
         <div class="asset_body_bottom">
             <div>
                 <span><span style="color: red">*</span>单位名称：</span>
-                <input class="input1" type="text" value="{{ user.name }}">
+                <input class="input1" type="text" value="{{ user.name }}" readonly>
                 <span style="margin-left: 163px;"><span style="color: red">*</span>账号：</span>
-                <input class="input1" type="text" value="{{ user.account_num }}" >
+                <input class="input1" type="text" value="{{ user.account_num }}" readonly>
             </div>
             <div style="margin-top: 10px">
                 <span><span style="color: red">*</span>查询日期：</span>
@@ -116,8 +116,8 @@
             </div>
             <div id="detail-btn">
                 <span id ="detail-save">查询</span>
-                <span id="detail-default">发邮件</span>
-                <span id="detail-cancel" onclick="huidan_pdf()">下载</span>
+{#                <span id="detail-default">发邮件</span>#}
+{#                <span id="detail-cancel" onclick="huidan_pdf()">下载</span>#}
             </div>
             <div id="query_result" style="margin-left: -55px;margin-top: 10px">
 

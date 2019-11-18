@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order_query</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .top1{
+            margin-bottom: 15px;
+            width: 100%;
+            height: 35px;
+
+        }
+        .detail_body{
+
+                width: 997px;
+                height: 550px;
+                background-color: #f0f0f0;
+                /*border: 1px solid red;*/
+        }
+        #asset_right_ul li{
+            float: left;
+            margin-right: 15px;
+            cursor: pointer; color: blue;font-size: 14px;line-height: 30px
+        }
+        .asset_body_bottom{
+            padding-top: 30px;
+            width: 666px;
+            height: 300px;
+            margin: 0 auto;
+
+            /*border: 1px solid red;*/
+        }
+        .asset_body_bottom div .input1,.asset_body_bottom div select{
+            width: 140px;
+            height: 25px;
+        }
+        #detail-btn{
+            margin-top: 30px;
+            width: 100%;
+            height: 40px;
+            /*border: 1px solid red;*/
+        }
+        #detail_submit{
+            margin-left: 251px;
+            display: inline-block;
+            width: 110px;
+            height: 35px;
+            text-align: center;
+            background-color: #b80020;
+            color: #fff;
+            line-height: 35px;
+            cursor: pointer;
+        }
+
+        /*下面按钮*/
+        .query_type{
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .query_type_on{
+            background-color: #b80020;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        .query_type_off{
+            background-color: #fff;
+            color: #b80020;
+            text-align: center;
+            display: inline-block;
+            margin-left: 1px;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="detail_body">
+        <div class="asset_body_bottom">
+{#            <div>#}
+{#                <span style="margin-left: -33px"><span style="color: red">*</span>付款账户类型：</span>#}
+{#                <label><input type="radio" name="account"><span style="margin-left: 10px">普通网银注册用户</label>#}
+{#                <label><input type="radio" name="account"><span style="margin-left: 10px">全球现金管理他行账户</span></label>#}
+{#            </div>#}
+            <div style="margin-top: 10px">
+                <span><span style="color: red;margin-left: -1px">*</span>上传文件：</span>
+                <input id="file_up" name="file_up" class="input1" style="width: 260px;" type="file">
+                <a href="/download_template" style="color: blue;font-size: 14px">下载模板</a>
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red;margin-left: 15px">*</span>总金额：</span>
+                <input class="input1" style="width: 260px;" type="text" value="" placeholder="金额需与上传文件一致">
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red;margin-left: 15px">*</span>总笔数：</span>
+                <input class="input1" style="width: 260px;" type="text" value="" placeholder="笔数需与上传文件一致">
+            </div>
+            <div style="margin-top: 10px">
+                <span><span style="color: red;margin-left: 15px">&nbsp;&nbsp;&nbsp;*</span>用途： </span>
+                <input class="input1" style="width: 260px;" type="text" value="">
+            </div>
+{#            <div style="margin-top: 10px">#}
+{#                <span style="margin-left: 0"><span style="color: red">*</span>汇款方式：</span>#}
+{#                <input type="radio" name="payType"><span style="margin-left: 10px">整包加急</span>#}
+{#                <input type="radio" name="payType"><span style="margin-left: 10px">整包普通</span>#}
+{#                <input type="radio" name="payType"><span style="margin-left: 10px">以上传文件中的为准（需要更新 <span style="color: blue">客户端工具</span>）</span>#}
+{#            </div>#}
+
+{#            <div style="margin-top: 10px">#}
+{#                <span style="margin-left: -9px">批量包名称：</span>#}
+{#                <input class="input1" style="width: 260px;" type="text" value="">#}
+{#            </div>#}
+
+            <div style="margin-top: 15px">
+                <span style="margin-left: -81px"><span style="color: red">*</span>下一个工作时间处理：</span>
+                 <div class="query_type query_type_on" id="query_type_way1">是</div>
+                <div class="query_type" style="margin-left: -4px" id="query_type_way2">否</div>
+                <span style="color: #b0b0b0"><img src="../../static/img/tanhao.png" style="width: 20px;height: 20px;margin-right: 10px;margin-left: 8px" alt="">非跨行工作时间，是否下一工作时间处理</span>
+            </div>
+            <div style="margin-top: 15px;position: relative">
+                <span style="margin-left: 7px">预约执行：</span>
+                 <div class="query_type" id="batch_pay1">是</div>
+                <div class="query_type query_type_on" style="margin-left: -4px" id="batch_pay2">否</div>
+                <span style="color: #b0b0b0;font-size: 14px; margin-left:8px;position: absolute;top: -5px;width: 567px">预约当日的需在执行时间60分钟前处理，预约非当日的需要提前一天处理，包括提交、撤销
+                    和授权操作；因收款行信息不完整或需要人工审核的，以银行处理时间为准。
+                </span>
+            </div>
+
+
+            <hr style="width: 996px;margin-left: 0;margin-top: 30px;background-color: #b0b0b0">
+            <p style="font-size: 14px;margin-left: 50px">本单位保证严格遵守支付结算业务相关法律法规，并对支付款项事由的真实性、合法性负责。</p>
+            <div id="detail-btn">
+                <button id ="detail_submit">提交</button>
+{#                    <input type="submit" id ="detail_submit">#}
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../../static/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#query_type_way1").on("click", function () {
+                this.className = "query_type_on"
+                document.getElementById("query_type_way2").className = "query_type_off"
+            });
+            $("#query_type_way2").on("click", function () {
+                this.className = "query_type_on"
+                document.getElementById("query_type_way1").className = "query_type_off"
+            });
+            $("#batch_pay1").on("click", function () {
+                this.className = "query_type_on"
+                document.getElementById("batch_pay2").className = "query_type_off"
+            });
+            $("#batch_pay2").on("click", function () {
+                this.className = "query_type_on"
+                document.getElementById("batch_pay1").className = "query_type_off"
+            });
+
+            $("#detail_submit").on("click", function () {
+                //创建FormData用于存储文件内容
+                {#var dict = new FormData();#}
+                {#dict.append("fileName", document.getElementById('file_up').value);#}
+                {#dict.append("fileContent", document.getElementById('file_up').files[0]);#}
+                {#dict.append('csrfmiddlewaretoken', '{{ csrf_token }}')#}
+                {#$.ajax({#}
+                {#    url: '/batch_pay_deal/',#}
+                {#    type: 'post',#}
+                {#    data: dict,#}
+                {##}
+                {#    processData: false,// 告诉jQuery不要去处理发送的数据(必须设置)#}
+                {#    contentType: false, // 告诉jQuery不要去设置Content-Type请求头（必须设置）#}
+                    {#dataType: 'JSON',#}
+                {#    success: function (data) {#}
+                {#        alert(data['result'])#}
+                {#        if (data['result']===('ok') ){#}
+                {#            alert(11)#}
+                {#            $(".mainbox").load('/batch_pay_success/')#}
+                {##}
+                {#        }#}
+                {#    }#}
+                {#  })#}
+            $(".mainbox").load('/batch_pay_success/');
+            })
+        })
+    </script>
+
+</body>
+</html>

@@ -54,7 +54,9 @@ urlpatterns = [
     # 支付业务
     path('payment_business/', payment_business),
     path('onebyone_pay/', onebyone_pay),
+    path('onebyone_private/', onebyone_private),
     path('batch_pay/', batch_pay),
+    path('batch_private_pay/', batch_private_pay),
     path('order_query/', order_query),
     path('get_person_roll/', get_person_roll),
     path('onebyone_pay_success/', onebyone_pay_success),

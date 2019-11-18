@@ -381,12 +381,12 @@
                 批量支付
             </li>
             <li id="online_pay" class="menu"><img name="pic" src="../../static/img/right_arrow.png" alt="">在线缴费</li>
-            <li id="daifa_salary2" class="menu"><img id="daifa_salary2_pic" name="pic" src="../../static/img/right_arrow.png" alt="">代发工资</li>
-            <!--二级菜单-->
-            <li id="batch_payroll" class="menu sub_menu" name="online_remi_daifa"
-                style="padding-left: 35px;display: none;">
-                批量支付
-            </li>
+            <li id="daifa_salary2" class="menu">代发工资</li>
+{#            <!--二级菜单-->#}
+{#            <li id="batch_payroll" class="menu sub_menu" name="online_remi_daifa"#}
+{#                style="padding-left: 35px;display: none;">#}
+{#                批量支付#}
+{#            </li>#}
             <li id="bank_tax_link" class="menu">银税通</li>
             <li id="audit_and_reimbursement" class="menu">单位公务卡审核报销</li>
             <li id="public_donation" class="menu">公益捐款</li>
@@ -504,28 +504,28 @@
             }
 
 
-            if (this.innerText.indexOf("代发工资") > -1 && this.contains(daifa_salary2_pic)) {
-
-                // 下拉菜单是否显示
-                sub_menu_lst = document.getElementsByName("online_remi_daifa")
-                // alert(sub_menu_lst.length)
-                for (var j = 0; j < sub_menu_lst.length; j++) {
-
-                    if (sub_menu_lst[j].style.display.indexOf("none") > -1) {
-                        // alert(j)
-                        sub_menu_lst[j].style.display = "block";
-                        // 左右箭头变换
-                        daifa_salary2_pic.setAttribute("src", "../../static/img/bottom_arrow.png")
-
-                    } else {
-                        // alert(j)
-                        sub_menu_lst[j].style.display = "none"
-                        // 左右箭头变换
-                        daifa_salary2_pic.setAttribute("src", "../../static/img/right_arrow.png")
-                    }
-                }
-
-            }
+            {#if (this.innerText.indexOf("代发工资") > -1 && this.contains(daifa_salary2_pic)) {#}
+            {##}
+            {#    // 下拉菜单是否显示#}
+            {#    sub_menu_lst = document.getElementsByName("online_remi_daifa")#}
+            {#    // alert(sub_menu_lst.length)#}
+            {#    for (var j = 0; j < sub_menu_lst.length; j++) {#}
+            {##}
+            {#        if (sub_menu_lst[j].style.display.indexOf("none") > -1) {#}
+            {#            // alert(j)#}
+            {#            sub_menu_lst[j].style.display = "block";#}
+            {#            // 左右箭头变换#}
+            {#            daifa_salary2_pic.setAttribute("src", "../../static/img/bottom_arrow.png")#}
+            {##}
+            {#        } else {#}
+            {#            // alert(j)#}
+            {#            sub_menu_lst[j].style.display = "none"#}
+            {#            // 左右箭头变换#}
+            {#            daifa_salary2_pic.setAttribute("src", "../../static/img/right_arrow.png")#}
+            {#        }#}
+            {#    }#}
+            {##}
+            {#}#}
 
             // 下拉菜单处理(二级菜单"付款预约"点击)
             if (this.innerText.indexOf("付款预约") > -1 && this.contains(payment_reservation_pic)) {
@@ -600,13 +600,13 @@
                     pathn = "/get_person_roll";
                     break;
                 case "onebyone_office_pay":
-                    pathn = "/onebyone_pay";
+                    pathn = "/onebyone_private";
                     break;
                 case "batch_office_pay":
-                    pathn = "/batch_pay";
+                    pathn = "/batch_private_pay";
                     break;
-                case "batch_payroll":
-                    pathn = "/batch_pay";
+                case "daifa_salary2":
+                    pathn = "/batch_private_pay";
                     break;
             }
             $(".mainbox").load(pathn)

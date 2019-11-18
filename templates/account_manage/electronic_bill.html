@@ -42,11 +42,11 @@
                 <td colspan="2">
                     <span style="margin-left: 100px">企业名称</span>
                 <select name="" id="sel1">
-                    <option value=""><span style="color: blue">山西图灵志科技有限公司</span></option>
+                    <option value=""><span style="color: blue">安平市融创建材制造有限公司</span></option>
                 </select>
                 <span style="margin-left: 100px">账号</span>
                 <select name="" id="sel2">
-                    <option value=""><span  style="color: blue;">0502122009020275336</span></option>
+                    <option value=""><span  style="color: blue;">34897898097</span></option>
                 </select>
                 </td>
 
@@ -56,34 +56,34 @@
             </tr>
             <tr>
                 <td width="260px">请选择对账单类型</td>
-                <td><input type="radio"><span>普通对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>普通对账单</span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="radio"><span>通用对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>通用对账单</span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="radio"><span>MT940对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>MT940对账单</span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="radio"><span>现金管理MT941对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>现金管理MT941对账单</span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="radio"><span>现金管理MT942对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>现金管理MT942对账单</span></td>
             </tr>
                 <td></td>
-                <td><input type="radio"><span>现金管理MX053对账单</span></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="radio"><span>个性化对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>现金管理MX053对账单</span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="radio"><span>本地对账单</span></td>
+                <td><input type="radio" name="Statementype"><span>个性化对账单</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="radio" name="Statementype"><span>本地对账单</span></td>
             </tr>
         </table>
         <table class="elec_table2" border="1px" cellspacing="0" cellpadding="0">
@@ -93,8 +93,8 @@
             <tr>
                 <td width="260px"><input type="radio"><span>1.日期：</span></td>
                 <td>
-                    从 <input placeholder="点击设置" type="text" value="" maxlength="100" id="Text4" onclick="SelectDate(this,'yyyy-MM-dd')"> 至
-                    <input placeholder="点击设置" type="text" value="" maxlength="100" id="Text5" onclick="SelectDate(this,'yyyy-MM-dd')">
+                    从 <input placeholder="点击设置" type="text" value="2018-12-01" maxlength="100" id="Text4" onclick="SelectDate(this,'yyyy-MM-dd')"> 至
+                    <input placeholder="点击设置" type="text" value="2018-12-31" maxlength="100" id="Text5" onclick="SelectDate(this,'yyyy-MM-dd')">
                 </td>
             </tr>
             <tr>
@@ -102,7 +102,7 @@
                 <td>
                     <span>年份</span>
                     <select>
-                        <option value="">2019</option>
+                        <option value="">2018</option>
                     </select>
                     <span>年</span>
                     <span style="margin-left: 30px">页码：</span>
@@ -122,8 +122,8 @@
         <p style="text-align: center;margin-top: 30px"><button style="width: 40px;background-color: #7997ca">查询</button></p>
         <p style="text-align: center;margin-top: 30px">请选择下载对账单的格式
             <select name="" id="">
-                <option value="">文本格式(.txt)</option>
                 <option value="">EXCEL(.csv)</option>
+                <option value="">文本格式(.txt)</option>
             </select>
             对您选择的账号    <button style="width: 40px;background-color: #7997ca" >下载</button>
         </p>
